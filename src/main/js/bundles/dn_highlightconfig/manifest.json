@@ -15,13 +15,15 @@
             "name": "Config",
             "impl": "./HighlightConfigHandler",
             "properties": {
-                "color": [0, 255, 255],
-                "fillOpacity": 0.25,
-                "haloColor": [0, 0, 255],
-                "haloOpacity": 1,
-                "shadowColor": [0, 0, 0],
-                "shadowOpacity": 0.4,
-                "shadowDifference": 0.375
+                "highlightOptions": {
+                    "color": [0, 255, 255],
+                    "fillOpacity": 0.25,
+                    "haloColor": [0, 0, 255],
+                    "haloOpacity": 1,
+                    "shadowColor": [0, 0, 0],
+                    "shadowOpacity": 0.4,
+                    "shadowDifference": 0.375
+                }
             },
             "references": [
                 {
