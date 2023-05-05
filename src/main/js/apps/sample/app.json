@@ -25,7 +25,14 @@
             "search-ui",
             "locator-store",
             "toc",
-            "sample_helloworld"
+            "result-ui",
+            "search-ui",
+            "selection-tools",
+            "selection-ui",
+            "highlights",
+            "agssearch",
+            "dn_highlightconfig",
+            "parametersearch"
         ]
     },
     "bundles": {
@@ -36,6 +43,51 @@
                 "imageWidth": 200,
                 "imagePosition": "above",
                 "link": "http://developernetwork.conterra.de"
+            }
+        },
+        "agssearch": {
+            "AutoStoreRegistration": {
+                "componentEnabled": true
+            },
+            "AGSStore":               [ {
+                "title": "Störungen",
+                "description": "Störungen",
+                "omniSearchLabelAttr": "kommentar",
+                "omniSearchSearchAttr": "kommentar",
+                "url": "https://services.conterra.de/arcgis/rest/services/training/stoerungen/MapServer/0",
+                "useIn": ["search"],
+                "filterOptions": {
+                    "suggestContains": true
+                },
+                "omniSearchTypingDelay": 500,
+                "omniSearchPageSize": 20,
+                "omniSearchDefaultLabel": "Störung suchen ...",
+                "fetchIdProperty": true,
+                "enablePagination": false,
+                "id": "store01"
+            }]
+        },
+        "search-ui": {
+            "Config": {
+                "actions": [
+                    "zoomto",
+                    "highlight"
+                ],
+                "showTotalResultsCount": true,
+                "zoomto-extent-expansion-factor": 1.5,
+                "highlight-remove-timeout": 3000,
+                "_searchDelay": 500
+            }
+        },
+        "dn_highlightconfig": {
+            "Config":{
+                "color": [0, 255, 255],
+                "fillOpacity": 0.25,
+                "haloColor": [0, 0, 255],
+                "haloOpacity": 1,
+                "shadowColor": [0, 0, 0],
+                "shadowOpacity": 0.4,
+                "shadowDifference": 0.375
             }
         },
         "map-init": {
@@ -56,7 +108,101 @@
                     }
                 ],
                 "map": {
-                    "layers": []
+                    "layers": [                             {
+                        "id": "stoerung",
+                        "type": "AGS_DYNAMIC",
+                        "url": "https://services.conterra.de/arcgis/rest/services/mapapps/stoerung/MapServer"
+                    },
+                                        {
+                        "title": "Feldnotizen",
+                        "type": "AGS_FEATURE",
+                        "url": "https://services.arcgis.com/ObdAEOfl1Z5LP2D0/arcgis/rest/services/Feldnotizen_erfassen/FeatureServer/2"
+                    },
+                    {
+                        "id": "koeln3",
+                        "title": "${map.koeln3.title}",
+                        "type": "GROUP",
+                        "visible": true,
+                        "layers": [
+                            {
+                                "title": "${map.koeln3.sights.title}",
+                                "url": "https://services.arcgis.com/ObdAEOfl1Z5LP2D0/arcgis/rest/services/Köln/FeatureServer/4",
+                                "type": "AGS_FEATURE",
+                                "popupTemplate": {
+                                    "title": "${map.koeln3.sights.titleSingle}",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "${map.koeln3.sights.text}"
+                                        },
+                                        {
+                                            "type": "fields",
+                                            "fieldInfos": [
+                                                {
+                                                    "fieldName": "ADRESSE",
+                                                    "label": "${common.address}"
+                                                },
+                                                {
+                                                    "fieldName": "STADTBEZIRK",
+                                                    "label": "${common.precint}"
+                                                },
+                                                {
+                                                    "fieldName": "HYPERLINK",
+                                                    "label": "${common.furtherinfo}"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "title": "${map.koeln3.playgrounds.title}",
+                                "url": "https://services.arcgis.com/ObdAEOfl1Z5LP2D0/arcgis/rest/services/Köln/FeatureServer/5",
+                                "type": "AGS_FEATURE",
+                                "visible": false,
+                                "popupTemplate": {
+                                    "title": "{Typ}",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "${map.koeln3.playgrounds.text}"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "title": "${map.koeln3.places.title}",
+                                "url": "https://services.arcgis.com/ObdAEOfl1Z5LP2D0/arcgis/rest/services/Köln/FeatureServer/9",
+                                "type": "AGS_FEATURE",
+                                "popupTemplate": {
+                                    "title": "${map.koeln3.places.titleSingle}",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "text": "${map.koeln3.places.text}"
+                                        },
+                                        {
+                                            "type": "fields",
+                                            "fieldInfos": [
+                                                {
+                                                    "fieldName": "ADRESSE",
+                                                    "label": "${common.address}"
+                                                },
+                                                {
+                                                    "fieldName": "STADTVIERT",
+                                                    "label": "${common.district}"
+                                                },
+                                                {
+                                                    "fieldName": "HYPERLINK",
+                                                    "label": "${common.furtherinfo}"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }]
                 },
                 "view": {
                     "viewmode": "2D",
@@ -94,7 +240,10 @@
                             "zoomOutTool",
                             "compassTool",
                             "restoreInitialViewTool",
-                            "viewmodeSwitcherTool"
+                            "viewmodeSwitcherTool",
+                            "highlightColorPickerToggleTool",
+                            "selection-ui-tool",
+                            "search-ui-tool"
                         ],
                         "registerWidget": {
                             "widgetRole": "mapview_tools"
@@ -114,12 +263,7 @@
                         "title": "Werkzeuge",
                         "cssClass": "ct-main-app-menu",
                         "tools": [
-                            "tocToggleTool",
-                            "printingToggleTool",
-                            "sharelinkTool",
-                            "helloTool",
-                            "IMPRINT_Imprint_CustomInfoTool",
-                            "IMPRINT_Imprint_CustomInfoTool_mobile"
+                           "*"
                         ],
                         "registerWidget": {
                             "widgetRole": "drawer_button"

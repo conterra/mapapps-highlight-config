@@ -1,16 +1,27 @@
-# mapapps-devnet-blueprint
+# Highlight Config
 
-**This project is not intended for use by non-con terra users.** It is designed for the creation of bundles and their releases in GitHub and can access con terra internal infrastructures for this purpose. To develop your own map.apps bundles, use the [mapapps-4-developers project](https://github.com/conterra/mapapps-4-developers).
+The Highlight Config bundle adds a configuration to the app to display a customized highlight setting.
 
-## Build
+![Screenshot App](https://github.com/conterra/mapapps-highlightconfig/blob/main/screenshot.jpg)
 
-![example workflow](https://github.com/conterra/mapapps-devnet-blueprint/actions/workflows/devnet-bundle-snapshot.yml/badge.svg)
 
-## Requirements
+## Sample App
+https://demos.conterra.de/mapapps/resources/apps/downloads_highlight-config/index.html
 
--   map.apps 4.14.3
--   All resources from `map.apps-VERSION/sdk/m2-repository` need to be copied manually to your local Maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS).
+## Installation Guide
+**Requirement: map.apps 4.9.0**
 
-## More Information
+[dn_highlightconfig Documentation](https://github.com/conterra/mapapps-highlight-config/tree/master/src/main/js/bundles/dn_highlightconfig)
 
-The project is always based on the latest version of the [mapapps-4-developers Project](https://github.com/conterra/mapapps-4-developers).
+## Development Guide
+### Define the mapapps remote base
+Before you can run the project you have to define the mapapps.remote.base property in the pom.xml-file:
+`<mapapps.remote.base>http://%YOURSERVER%/ct-mapapps-webapp-%VERSION%</mapapps.remote.base>`
+
+### Other methods to to define the mapapps.remote.base property.
+1. Goal parameters
+`mvn install -Dmapapps.remote.base=http://%YOURSERVER%/ct-mapapps-webapp-%VERSION%`
+
+2. Build properties
+Change the mapapps.remote.base in the build.properties file and run:
+`mvn install -Denv=dev -Dlocal.configfile=%ABSOLUTEPATHTOPROJECTROOT%/build.properties`

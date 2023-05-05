@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export default {
-    bundleName: "Hallo Welt",
-    bundleDescription: "Das Modul gibt Hallo aus.",
-    hello: "Hallo Welt"
+module.exports = {
+    root: ({
+        bundleName: "Highlight Config",
+        bundleDescription: "Bundle to customize highlighting options"
+    }),
+    "de": true
 };

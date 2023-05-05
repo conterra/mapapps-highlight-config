@@ -13,19 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { assert } from "chai";
-import module from "module";
-import Hello from "../Hello";
-
-let createHello = function (msg) {
-    let hello = new Hello();
-    hello._properties = {message: msg};
-    hello.activate();
-    return hello;
+module.exports = {
+    bundleName: "Highlight Config",
+    bundleDescription: "Das Bundle ermöglicht es benutzerdefiniertes Highlighting zu erstellen."
 };
-
-describe(module.id, function(){
-    it("expect properties.message is returned by getMessage", function () {
-        assert.equal(createHello("hello world").getMessage(), "hello world");
-    });
-});
