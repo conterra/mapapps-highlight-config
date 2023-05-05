@@ -11,7 +11,9 @@ The Highlight Config bundle provides the possibility to configure the highlight 
 ```json
 "dn_highlightconfig": {
     "Config":{
-        "color": [0, 255, 0]
+        "highlightOptions": {
+            "color": [0, 255, 0]
+        }
     }
 }
 ```
@@ -21,10 +23,12 @@ The Highlight Config bundle provides the possibility to configure the highlight 
 ```json
 "dn_highlightconfig": {
     "Config":{
-        "color": "green",
-        "fillOpacity": 0.5,
-        "haloColor": "##8800FF",
-        "haloOpacity": 0.75
+        "highlightOptions": {
+            "color": "green",
+            "fillOpacity": 0.5,
+            "haloColor": "##8800FF",
+            "haloOpacity": 0.75
+        }
     }
 }
 ```
@@ -35,13 +39,15 @@ The Highlight Config bundle provides the possibility to configure the highlight 
 ```json
 "dn_highlightconfig": {
     "Config":{
-        "color": [0, 255, 255],
-        "fillOpacity": 0.25,
-        "haloColor": [0, 255, 255],
-        "haloOpacity": 1,
-        "shadowColor": [0, 0, 0],
-        "shadowOpacity": 0.4,
-        "shadowDifference": 0.375
+        "highlightOptions": {
+            "color": [0, 255, 255],
+            "fillOpacity": 0.25,
+            "haloColor": [0, 255, 255],
+            "haloOpacity": 1,
+            "shadowColor": [0, 0, 0],
+            "shadowOpacity": 0.4,
+            "shadowDifference": 0.375
+        }
     }
 }
 ```
