@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 export default {
-    root: ({
+    root: {
         bundleName: "Highlight Config",
         bundleDescription: "Bundle to customize highlighting options"
-    }),
-    "de": true
+    },
+    de: true
 };
