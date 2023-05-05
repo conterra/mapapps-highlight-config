@@ -42,7 +42,7 @@ export default class HighlightConfigHandler {
 
     _initComponent(): void {
         this.getView().then((view) => {
-            view.highlightOptions = this._properties;
+            view.highlightOptions = this._properties.highlightOptions;
         });
     }
 }
