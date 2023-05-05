@@ -9,6 +9,7 @@
     ],
     "main": "",
     "icon": {},
+    "i18n": ["bundle"],
     "productName": "devnet-mapapps-highlight-config",
     "components": [
         {
