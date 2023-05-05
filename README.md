@@ -1,6 +1,6 @@
 # Highlight Config
 
-The Highlight Config bundle adds a configuration to the app to display a customized highlight setting.
+The Highlight Config bundle adds a configuration to the app to display a customized highlight.
 
 ![Screenshot App](https://github.com/conterra/mapapps-highlight-config/blob/main/screenshot.jpg)
 
