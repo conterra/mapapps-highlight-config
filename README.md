@@ -9,7 +9,7 @@ The Highlight Config bundle adds a configuration to the app to display a customi
 https://demos.conterra.de/mapapps/resources/apps/downloads_highlight-config/index.html
 
 ## Installation Guide
-**Requirement: map.apps 4.9.0**
+**Requirement: map.apps 4.14.0**
 
 [dn_highlightconfig Documentation](https://github.com/conterra/mapapps-highlight-config/tree/master/src/main/js/bundles/dn_highlightconfig)
 
