@@ -1,7 +1,7 @@
 {
-    "name": "mapapps-4-developers",
+    "name": "mapapps-highlight-config",
     "description": "test build",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "license": "CC0-1.0",
     "scripts": {
         "check-licenses": "node ./src/support/js/check-licenses.js"
