@@ -2,7 +2,7 @@
 
 The Highlight Config bundle adds the possibility to set highlightOptions via configuration.
 
-![Screenshot App](https://github.com/conterra/mapapps-highlight-config/blob/main/screenshot.jpg)
+![Screenshot App](https://github.com/conterra/mapapps-highlight-config/blob/main/screenshot.png)
 
 
 ## Sample App
