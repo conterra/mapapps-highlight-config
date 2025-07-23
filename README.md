@@ -6,7 +6,7 @@ The Highlight Config bundle adds the possibility to set highlightOptions via con
 
 
 ## Sample App
-https://demos.conterra.de/mapapps/resources/apps/downloads_highlight-config/index.html
+https://demos.conterra.de/mapapps/resources/apps/public_demo_highlightconfig/index.html
 
 ## Installation Guide
 **Requirement: map.apps 4.14.0**
