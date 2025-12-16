@@ -1,3 +1,6 @@
+[![devnet-bundle-snapshot](https://github.com/conterra/mapapps-highlight-config/actions/workflows/devnet-bundle-snapshot.yml/badge.svg)](https://github.com/conterra/mapapps-highlight-config/actions/workflows/devnet-bundle-snapshot.yml)
+![Static Badge](https://img.shields.io/badge/requires_map.apps-4.20.0-e5e5e5?labelColor=%233E464F&logoColor=%23e5e5e5)
+![Static Badge](https://img.shields.io/badge/tested_for_map.apps-4.20.0-%20?labelColor=%233E464F&color=%232FC050)
 # Highlight Config
 
 The Highlight Config bundle adds the possibility to set highlightOptions via configuration.
@@ -7,9 +10,6 @@ The Highlight Config bundle adds the possibility to set highlightOptions via con
 
 ## Sample App
 https://demos.conterra.de/mapapps/resources/apps/public_demo_highlightconfig/index.html
-
-## Installation Guide
-**Requirement: map.apps 4.14.0**
 
 [dn_highlightconfig Documentation](https://github.com/conterra/mapapps-highlight-config/tree/master/src/main/js/bundles/dn_highlightconfig)
 
